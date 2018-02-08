@@ -9,7 +9,7 @@ const pgp=require('pg-promise')(options);
 function setDatabase(){
     if(process.env.NODE_ENV==='development'||!process.env.NODE_ENV){
         return pgp({
-            database: 'word_game_dev',
+            database: 'cuevent_dev',
             port: 5432,
             host: 'localhost',
         })
