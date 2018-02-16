@@ -1,28 +1,94 @@
-.App {
+.App{
+  height: 100vh;
+}
+.app-header {
+  width: 100vw;
+  height: 15vh;
+  background-color: #85C2EA;
+  color: #FFFFFF;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.header-text{
+  height: 15vh;
+  display: flex;
+  align-items: center;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.navigator{
+  height: 15vh;
+  display: flex;
+  align-items: center;
+}
+.nav-link{
+  padding: 0 5px;
+  margin: 0 3px;
+  border-right: solid white 2px;
+}
+.nav-link a{
+  text-decoration: none;
+  color: white;
+}
+main{
+  margin-top: 15vh;
+  height: 85vh;
+}
+footer{
+  width: 100vw;
+  height: 10vh;
+  background-color: #85C2EA;
+  color: #FFFFFF;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content{
+  width: 30vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer-link{
+  margin: 5px;
+}
+.footer-link a{
+  text-decoration: none;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.search-box{
+  height: 40vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  background-image: url("./assets/campus_2.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.App-intro {
-  font-size: large;
+.search-box-content{
+  height: 30vh;
+  width: 70vw;
+  min-width: 510px;
+  min-height: 128px;
+  background-color: rgba(255, 255, 255 ,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #4D85C1;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.search-bar input{
+  height: 30px;
+  margin: 5px;
+}
+.search-bar button{
+  height: 40px;
+  margin: 5px;
+  background-color: #4D85C1;
+  border-radius: 20%;
 }
