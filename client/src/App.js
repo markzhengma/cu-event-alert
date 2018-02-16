@@ -31,7 +31,7 @@ class App extends Component {
           <Header user = {this.state.user} auth = {this.state.auth} />
           <main>
             <Route exact path = '/' render = {() => <Home />}/>
-            <Route exact path = 'login' render = {() => <Login />} />
+            <Route exact path = '/login' render = {() => <Login />} />
           </main>
           <Footer/>
         </div>
