@@ -17,6 +17,7 @@
   height: 15vh;
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 .header-text a{
   text-decoration: none;
@@ -26,6 +27,7 @@
   height: 15vh;
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 .nav-link{
   padding: 0 5px;

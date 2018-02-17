@@ -17,10 +17,16 @@ const Header = (props) => {
                     <div className = "nav-link">
                         <Link to = '/new'>Create Event</Link>
                     </div>
-                    <div className = "nav-link">
-                        <Link to = '/login'>Log In</Link>
-                    </div>
-                    <div className = "profile-btn"/>
+                    {props.auth ? 
+                        <div className = "nav-link">
+                            <Link to = "/user">{props.user.firstName}</Link>
+                            <Link to = "/">Logout</Link>
+                        </div>
+                    :
+                        <div className = "nav-link">
+                            <Link to = '/login'>Log In</Link>
+                        </div>
+                    }
                 </div>
             </div>
         </header>
