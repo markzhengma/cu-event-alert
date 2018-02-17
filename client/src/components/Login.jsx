@@ -5,7 +5,7 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
-            username: '',
+            email: '',
             password: '',
         }
     }
@@ -22,13 +22,13 @@ class Login extends Component {
         return (
             <div className = "login-box">
                 <form>
-                    <input type = "text" name = "username" value = {this.state.username} placeholder = "Username" onChange = {this.handleInputChange}/>
+                    <input type = "email" name = "email" value = {this.state.email} placeholder = "Your Email" onChange = {this.handleInputChange}/>
                     <input type = "password" name = "password" value = {this.state.password} placeholder = "Password" onChange = {this.handleInputChange}/>
                     <button type = "submit">Log in</button>
                 </form>
                 <div className = "register-link">
                     <p>New user of our community? Welcome!</p>
-                    <Link to = 'register'>Register Here.</Link>
+                    <Link to = '/register'>Register Here.</Link>
                 </div>
             </div>
         )
