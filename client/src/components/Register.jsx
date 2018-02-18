@@ -5,10 +5,12 @@ class Register extends Component {
     constructor() {
         super();
         this.state = {
-            email: '',
+            username: '',
             password: '',
-            firstName: '',
-            lastName: '',
+            firstname: '',
+            lastname: '',
+            email: '',
+            school: '',
         }
     }
 
@@ -23,14 +25,16 @@ class Register extends Component {
     render() {
         return (
             <div className = "register-box">
-                <form>
-                    <input type = "email" name = "email" value = {this.state.email} placeholder = "Your Email" onChange = {this.handleInputChange}/>
+                <form onSubmit = {(e) => this.props.handleRegisterSubmit(e, this.state.username, this.state.password, this.state.firstname, this.state.lastname, this.state.email, this.state.school)}>
+                    <input type = "username" name = "username" value = {this.state.username} placeholder = "Your username" onChange = {this.handleInputChange}/>
                     <input type = "password" name = "password" value = {this.state.password} placeholder = "Password" onChange = {this.handleInputChange}/>
-                    <input type = 'text' name = 'first-name' value = {this.state.firstName} placeholder = "Your First Name" onChange = {this.handleInputChange}/>
-                    <input type = 'text' name = 'last-name' value = {this.state.lastName} placeholder = "Your Last Name" onChange = {this.handleInputChange}/>
+                    <input type = 'text' name = 'firstname' value = {this.state.firstname} placeholder = "Your First Name" onChange = {this.handleInputChange}/>
+                    <input type = 'text' name = 'lastname' value = {this.state.lastname} placeholder = "Your Last Name" onChange = {this.handleInputChange}/>
+                    <input type = "text" name = "email" value = {this.state.email} placeholder = "Your Email" onChange = {this.handleInputChange}/>
+                    <input type = "text" name = "school" value = {this.state.school} placeholder = "Your School" onChange = {this.handleInputChange}/>
                     <button type = "submit">Register</button>
                 </form>
-                <Link to = "/login">Return</Link>
+                <a onClick = {this.props.loginShowHandler}>Return</a>
             </div>
         )
     }

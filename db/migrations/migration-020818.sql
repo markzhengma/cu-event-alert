@@ -4,8 +4,10 @@ CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
     password_digest TEXT NOT NULL,
-    fullname VARCHAR(255) NOT NULL,
-    email VARCHAR(255)
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    email TEXT NOT NULL,
+    school VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS users_events (

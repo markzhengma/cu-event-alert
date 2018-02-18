@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const flash = require("connect-flash");
 
 const app = express();
 require('dotenv').config();
@@ -23,6 +24,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use(express.static('public'));
 
@@ -35,12 +37,12 @@ app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// const authRoutes = require('./routes/auth-routes');
-// app.use('/auth',authRoutes);
-// const userRoutes = require('./routes/user-routes');
-// app.use('/user',userRoutes);
-// const wordRoutes = require('./routes/word-routes');
-// app.use('/word', wordRoutes);
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth',authRoutes);
+const userRoutes = require('./routes/user-routes');
+app.use('/user',userRoutes);
+// const eventRoutes = require('./routes/event-routes');
+// app.use('/event', eventRoutes);
 // const usersWordRoutes = require('./routes/usersword-routes');
 // app.use('/usersword', usersWordRoutes);
 

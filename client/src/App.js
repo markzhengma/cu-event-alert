@@ -22,18 +22,22 @@ class App extends Component {
       user: null,
       currentContent: "home",
       redirect: "/",
+      loginShow: false,
+      registerShow: false,
     }
     this.requireLogin = this.requireLogin.bind(this);
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this);
     this.logOut = this.logOut.bind(this);
     this.setContent = this.setContent.bind(this);
+    this.loginShowHandler = this.loginShowHandler.bind(this);
+    this.registerShowHandler = this.registerShowHandler.bind(this);
   }
 
   requireLogin(){
     if(!this.state.auth){
       this.setState({
-        redirect: "/login",
+        loginShow: true,
       });
     }else{
       this.setState({
@@ -42,10 +46,10 @@ class App extends Component {
     }
   };
 
-  handleLoginSubmit(e, email, password) {
+  handleLoginSubmit(e, username, password) {
     e.preventDefault();
     axios.post('/auth/login', {
-      email,
+      username,
       password,
     })
     .then(res => {
@@ -57,7 +61,7 @@ class App extends Component {
     .then(() => {
       if(this.state.user){
         this.setState({
-          redirect: '/user',
+          loginShow: false,
         })
       }
     })
@@ -66,13 +70,15 @@ class App extends Component {
     })
   };
 
-  handleRegisterSubmit(e, email, password, firstName, lastName){
+  handleRegisterSubmit(e, username, password, firstname, lastname, email, school){
     e.preventDefault();
     axios.post("/auth/register", {
-      email,
+      username,
       password,
-      firstName,
-      lastName
+      firstname,
+      lastname,
+      email,
+      school
     })
     .then(res => {
       console.log(res);
@@ -83,7 +89,7 @@ class App extends Component {
     })
     .then(
       this.setState({
-        redirect: "/user",
+        registerShow: false,
       })
     )
     .catch(err => {
@@ -98,6 +104,7 @@ class App extends Component {
       this.setState({
         currentContent: "home",
         auth: false,
+        user: null,
         redirect: "/",
       });
     })
@@ -111,6 +118,24 @@ class App extends Component {
       currentContent: content,
     })
   };
+
+  loginShowHandler = () => {
+    if(this.state.auth == false){
+      this.setState({
+        loginShow: true,
+        registerShow: false,
+      })
+    }
+  };
+
+  registerShowHandler = () => {
+    if(this.state.auth == false){
+      this.setState({
+        loginShow: false,
+        registerShow: true,
+      })
+    }
+  }
 
   render() {
     // if(this.state.redirect !== null){
@@ -127,11 +152,16 @@ class App extends Component {
       return (
         <Router>
           <div className="App">
-            <Header user = {this.state.user} auth = {this.state.auth} />
+            <Header user = {this.state.user} auth = {this.state.auth} logOut = {this.logOut} loginShowHandler = {this.loginShowHandler}/>
             <main>
-              <Route exact path = '/' render = {() => <Home />}/>
-              <Route exact path = '/login' render = {() => <Login handleLoginSubmit = {this.handleLoginSubmit}/>} />
-              <Route exact path = '/register' render = {() => <Register handleRegisterSubmit = {this.handleRegisterSubmit}/>} />
+              <Route exact path = '/' render = {() => <Home handleLoginSubmit = {this.handleLoginSubmit} 
+                                                            handleRegisterSubmit = {this.handleRegisterSubmit} 
+                                                            loginShow = {this.state.loginShow} 
+                                                            registerShow = {this.state.registerShow} 
+                                                            loginShowHandler = {this.loginShowHandler} 
+                                                            registerShowHandler = {this.registerShowHandler}
+                                                            />}/>
+                                                            
             </main>
             <Footer/>
           </div>
