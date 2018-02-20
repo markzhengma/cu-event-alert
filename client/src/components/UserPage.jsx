@@ -19,7 +19,7 @@ class UserPage extends Component {
 
     render() {
         return (
-            <div className = "userpage">
+            <div className = "user-page">
                 <div className = "user-title">
                     <h3>{this.props.user.firstname} {this.props.user.lastname}</h3>
                 </div>
