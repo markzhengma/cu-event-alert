@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import UserPage from "./components/UserPage";
 
 class App extends Component {
   constructor(){
@@ -30,8 +31,7 @@ class App extends Component {
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this);
     this.logOut = this.logOut.bind(this);
     this.setContent = this.setContent.bind(this);
-    this.loginShowHandler = this.loginShowHandler.bind(this);
-    this.registerShowHandler = this.registerShowHandler.bind(this);
+    this.logOrRegHandler = this.logOrRegHandler.bind(this);
   }
 
   requireLogin(){
@@ -119,22 +119,11 @@ class App extends Component {
     })
   };
 
-  loginShowHandler = () => {
-    if(this.state.auth == false){
-      this.setState({
-        loginShow: true,
-        registerShow: false,
-      })
-    }
-  };
-
-  registerShowHandler = () => {
-    if(this.state.auth == false){
-      this.setState({
-        loginShow: false,
-        registerShow: true,
-      })
-    }
+  logOrRegHandler = (hasLogin, hasRegister) => {
+    this.setState({
+      loginShow: hasLogin,
+      registerShow: hasRegister,
+    })
   }
 
   render() {
@@ -152,16 +141,15 @@ class App extends Component {
       return (
         <Router>
           <div className="App">
-            <Header user = {this.state.user} auth = {this.state.auth} logOut = {this.logOut} loginShowHandler = {this.loginShowHandler}/>
+            <Header user = {this.state.user} auth = {this.state.auth} logOut = {this.logOut} logOrRegHandler = {this.logOrRegHandler}/>
             <main>
               <Route exact path = '/' render = {() => <Home handleLoginSubmit = {this.handleLoginSubmit} 
                                                             handleRegisterSubmit = {this.handleRegisterSubmit} 
                                                             loginShow = {this.state.loginShow} 
                                                             registerShow = {this.state.registerShow} 
-                                                            loginShowHandler = {this.loginShowHandler} 
-                                                            registerShowHandler = {this.registerShowHandler}
+                                                            logOrRegHandler = {this.logOrRegHandler}
                                                             />}/>
-                                                            
+              <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
             </main>
             <Footer/>
           </div>

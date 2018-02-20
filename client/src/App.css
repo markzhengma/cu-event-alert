@@ -17,11 +17,11 @@
   height: 15vh;
   display: flex;
   align-items: center;
-  margin: 10px;
 }
 .header-text a{
   text-decoration: none;
   color: white;
+  font-size: 3vh;
 }
 .navigator{
   height: 15vh;
@@ -99,9 +99,58 @@ footer{
   background-color: #4D85C1;
   border-radius: 20%;
 }
+.login-box{
+  background-color: #C4D8E2;
+}
 .login-box a{
   cursor: pointer;
 }
+.register-box{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #C4D8E2;
+}
 .register-box a{
   cursor: pointer;
+}
+.register-box form{
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.register-input{
+  width: 200px;
+}
+.register-input:hover{
+  color: white;
+  background-color: #85C2EA;
+}
+.register-btn{
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+  color: white;
+  background: #4D85C1;
+  cursor: pointer;
+}
+.register-btn:hover{
+  color: #4D85C1;
+  background: white;
+}
+.userlink-group{
+  display: flex;
+  flex-direction: row;
+}
+.fa-user{
+  color: white;
+  margin-left: 1vw;
+}
+.userpage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

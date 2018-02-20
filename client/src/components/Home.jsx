@@ -7,8 +7,8 @@ import Register from "./Register";
 const Home = (props) => {
     return (
          <div className = 'home-content'>
-            {props.loginShow ? <Login handleLoginSubmit = {props.handleLoginSubmit} registerShowHandler = {props.registerShowHandler}/> : ""}
-            {props.registerShow ? <Register handleRegisterSubmit = {props.handleRegisterSubmit} loginShowHandler = {props.loginShowHandler}/> : ""}
+            {props.loginShow ? <Login handleLoginSubmit = {props.handleLoginSubmit} logOrRegHandler = {props.logOrRegHandler}/> : ""}
+            {props.registerShow ? <Register handleRegisterSubmit = {props.handleRegisterSubmit} logOrRegHandler = {props.logOrRegHandler}/> : ""}
             <SearchBox/>
         </div>
     )

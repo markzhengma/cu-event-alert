@@ -18,13 +18,15 @@ const Header = (props) => {
                         <Link to = '/new'>Create Event</Link>
                     </div>
                     {props.auth ? 
-                        <div className = "nav-link">
-                            <Link to = "/user">{props.user.username}</Link>
-                            <Link to = "/" onClick = {props.logOut}>Logout</Link>
+                        <div className = "userlink-group">
+                            <div className = "nav-link">
+                                <Link to = "/" onClick = {props.logOut}>Logout</Link>
+                            </div>
+                            <Link to = "/user"><i class="fas fa-user"></i></Link>
                         </div>
                     :
                         <div className = "nav-link">
-                            <a onClick = {props.loginShowHandler}>Log In</a>
+                            <a onClick = {() => props.logOrRegHandler(true, false)}>Log In</a>
                         </div>
                     }
                 </div>

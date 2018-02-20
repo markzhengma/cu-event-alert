@@ -28,7 +28,9 @@ class Login extends Component {
                 </form>
                 <div className = "register-link">
                     <p>New user of our community? Welcome!</p>
-                    <a onClick = {this.props.registerShowHandler}>Register Here.</a>
+                    <button onClick = {() => this.props.logOrRegHandler(false, true)}>Register Here.</button>
+                    <p>Continue as a guest?</p>
+                    <button onClick = {() => this.props.logOrRegHandler(false, false)}>Return</button>
                 </div>
             </div>
         )
