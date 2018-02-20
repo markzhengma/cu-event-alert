@@ -14,6 +14,8 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import UserPage from "./components/UserPage";
+import UserEvent from "./components/UserEvent";
+import UserSetting from "./components/UserSetting";
 
 class App extends Component {
   constructor(){
@@ -108,7 +110,6 @@ class App extends Component {
         auth: false,
         user: null,
         redirect: "/",
-        userMenuShow: false,
       });
     })
     .catch(err => {
@@ -150,21 +151,23 @@ class App extends Component {
       return (
         <Router>
           <div className="App">
+            <div className = "spacer-block"/>
             <Header user = {this.state.user} 
                     auth = {this.state.auth} 
+                    userMenuShow = {this.state.userMenuShow}
+                    loginShow = {this.state.loginShow} 
+                    registerShow = {this.state.registerShow} 
                     logOut = {this.logOut} 
                     logOrRegHandler = {this.logOrRegHandler}
                     userMenuHandler = {this.userMenuHandler}
-                    userMenuShow = {this.state.userMenuShow}
+                    handleLoginSubmit = {this.handleLoginSubmit} 
+                    handleRegisterSubmit = {this.handleRegisterSubmit} 
                     />
             <main>
-              <Route exact path = '/' render = {() => <Home handleLoginSubmit = {this.handleLoginSubmit} 
-                                                            handleRegisterSubmit = {this.handleRegisterSubmit} 
-                                                            loginShow = {this.state.loginShow} 
-                                                            registerShow = {this.state.registerShow} 
-                                                            logOrRegHandler = {this.logOrRegHandler}
-                                                            />}/>
+              <Route exact path = '/' render = {() => <Home />}/>
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
+              <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
+              <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
             </main>
             <Footer/>
           </div>

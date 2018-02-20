@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import Register from "./Register";
+import Login from "./Login";
+
 class Header extends Component {
     render() {
         var userMenuHide = {
@@ -84,11 +87,13 @@ class Header extends Component {
 
                         </div>
                     </div>
-                    <div className = "user-menu" style = {this.props.userMenuShow ? userMenuShow : userMenuHide}>
+                    {this.props.loginShow ? <Login handleLoginSubmit = {this.props.handleLoginSubmit} logOrRegHandler = {this.props.logOrRegHandler}/> : ""}
+                    {this.props.registerShow ? <Register handleRegisterSubmit = {this.props.handleRegisterSubmit} logOrRegHandler = {this.props.logOrRegHandler}/> : ""}
+                    <div className = "user-menu" onClick = {this.props.userMenuHandler} style = {this.props.userMenuShow ? userMenuShow : userMenuHide}>
                         <Link to = "/user" style = {this.props.userMenuShow ? linkShow : linkHide}>Profile</Link>
-                        <a style = {this.props.userMenuShow ? linkShow : linkHide}>My Events</a>
-                        <a style = {this.props.userMenuShow ? linkShow : linkHide}>Settings</a>
-                        <a onClick = {this.props.logOut} style = {this.props.userMenuShow ? linkShow : linkHide}>Log out</a>
+                        <Link to = "/user/event" style = {this.props.userMenuShow ? linkShow : linkHide}>My Events</Link>
+                        <Link to = "/user/setting" style = {this.props.userMenuShow ? linkShow : linkHide}>Settings</Link>
+                        <Link to = "/" onClick = {this.props.logOut} style = {this.props.userMenuShow ? linkShow : linkHide}>Log out</Link>
                     </div>
                 </div>
             </header>
