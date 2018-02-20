@@ -108,6 +108,7 @@ class App extends Component {
         auth: false,
         user: null,
         redirect: "/",
+        userMenuShow: false,
       });
     })
     .catch(err => {

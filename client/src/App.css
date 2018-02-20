@@ -59,8 +59,9 @@ footer{
   align-items: center;
 }
 .footer-content{
-  width: 30vw;
+  width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .footer-link{
@@ -191,6 +192,9 @@ footer{
 .fa-user{
   color: white;
   margin-left: 1vw;
+}
+.user-menu a:hover{
+  background-color: #4D85C1;
 }
 .userpage{
   display: flex;
