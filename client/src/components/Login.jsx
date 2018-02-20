@@ -26,11 +26,10 @@ class Login extends Component {
                     <input type = "password" name = "password" value = {this.state.password} placeholder = "Password" onChange = {this.handleInputChange}/>
                     <button type = "submit">Log in</button>
                 </form>
-                <div className = "register-link">
+                <div className = "login-link">
                     <p>New user of our community? Welcome!</p>
-                    <button onClick = {() => this.props.logOrRegHandler(false, true)}>Register Here.</button>
-                    <p>Continue as a guest?</p>
-                    <button onClick = {() => this.props.logOrRegHandler(false, false)}>Return</button>
+                    <button onClick = {() => this.props.logOrRegHandler(false, true)}>Register Here</button>
+                    <button onClick = {() => this.props.logOrRegHandler(false, false)}>Continue as Guest</button>
                 </div>
             </div>
         )

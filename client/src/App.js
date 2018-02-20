@@ -25,6 +25,7 @@ class App extends Component {
       redirect: "/",
       loginShow: false,
       registerShow: false,
+      userMenuShow: false,
     }
     this.requireLogin = this.requireLogin.bind(this);
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
@@ -32,6 +33,7 @@ class App extends Component {
     this.logOut = this.logOut.bind(this);
     this.setContent = this.setContent.bind(this);
     this.logOrRegHandler = this.logOrRegHandler.bind(this);
+    this.userMenuHandler = this.userMenuHandler.bind(this);
   }
 
   requireLogin(){
@@ -124,6 +126,12 @@ class App extends Component {
       loginShow: hasLogin,
       registerShow: hasRegister,
     })
+  };
+
+  userMenuHandler = () => {
+    this.setState({
+      userMenuShow: !this.state.userMenuShow,
+    })
   }
 
   render() {
@@ -141,7 +149,13 @@ class App extends Component {
       return (
         <Router>
           <div className="App">
-            <Header user = {this.state.user} auth = {this.state.auth} logOut = {this.logOut} logOrRegHandler = {this.logOrRegHandler}/>
+            <Header user = {this.state.user} 
+                    auth = {this.state.auth} 
+                    logOut = {this.logOut} 
+                    logOrRegHandler = {this.logOrRegHandler}
+                    userMenuHandler = {this.userMenuHandler}
+                    userMenuShow = {this.state.userMenuShow}
+                    />
             <main>
               <Route exact path = '/' render = {() => <Home handleLoginSubmit = {this.handleLoginSubmit} 
                                                             handleRegisterSubmit = {this.handleRegisterSubmit} 

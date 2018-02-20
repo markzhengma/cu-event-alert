@@ -36,7 +36,7 @@ class Register extends Component {
                     <input className = "register-input" type = "text" name = "school" value = {this.state.school} placeholder = "Your School" onChange = {this.handleInputChange}/>
                     <div className = "btn-group">
                         <button className = "register-btn" type = "submit">Register</button>
-                        <button className = "register-btn" onClick = {() => this.props.logOrRegHandler(false, false)}>Return</button>
+                        <button className = "register-btn" onClick = {() => this.props.logOrRegHandler(false, false)}>Back</button>
                     </div>
                 </form>
             </div>

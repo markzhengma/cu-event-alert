@@ -20,13 +20,12 @@ const Header = (props) => {
                     {props.auth ? 
                         <div className = "userlink-group">
                             <div className = "nav-link">
-                                <Link to = "/" onClick = {props.logOut}>Logout</Link>
+                                <Link to = "/user">{props.user.username}<i className="fas fa-user"></i></Link>
                             </div>
-                            <Link to = "/user"><i class="fas fa-user"></i></Link>
                         </div>
                     :
                         <div className = "nav-link">
-                            <a onClick = {() => props.logOrRegHandler(true, false)}>Log In</a>
+                            <a onClick = {() => props.logOrRegHandler(true, false)}>Log in</a>
                         </div>
                     }
                 </div>
