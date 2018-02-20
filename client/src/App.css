@@ -23,6 +23,7 @@
   text-decoration: none;
   color: white;
   font-size: 3vh;
+  margin-left: 10px;
 }
 .navigator{
   height: 15vh;
@@ -157,8 +158,13 @@ footer{
   flex-direction: column;
   justify-content: space-around;
 }
+.register-box p{
+  font-size: 14px;
+  margin: 0;
+}
 .register-input{
   width: 200px;
+  height: 25px;
 }
 .register-input:hover{
   color: white;
