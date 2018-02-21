@@ -76,49 +76,6 @@ footer{
   color: white;
 }
 
-.search-box{
-  height: 40vh;
-  width: 100vw;
-  min-height: 200px;
-  min-width: 520px;
-  overflow: scroll;
-  background-position: center;
-  background-size: cover;
-  background-image: url("./assets/campus_2.jpg");
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.search-box-content{
-  height: 30vh;
-  width: 70vw;
-  min-width: 510px;
-  min-height: 128px;
-  background-color: rgba(255, 255, 255 ,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #4D85C1;
-}
-.search-bar input{
-  height: 30px;
-  margin: 5px;
-}
-.search-bar input:hover{
-  background-color: #85C2EA;
-}
-.search-bar button{
-  height: 40px;
-  margin: 5px;
-  background-color: #4D85C1;
-  color: white;
-  cursor: pointer;
-}
-.search-bar button:hover{
-  color: #4D85C1;
-  background: white;
-}
 
 .login-box{
   background-color: #C4D8E2;
@@ -152,6 +109,8 @@ footer{
 .login-link p{
   margin: 0;
 }
+
+
 .register-box{
   height: 500px;
   display: flex;
@@ -192,6 +151,8 @@ footer{
   color: #4D85C1;
   background: white;
 }
+
+
 .userlink-group{
   display: flex;
   flex-direction: row;
@@ -212,6 +173,8 @@ footer{
 .user-menu a:hover{
   background-color: #4D85C1;
 }
+
+
 .user-page{
   display: flex;
   flex-direction: column;
@@ -230,6 +193,52 @@ footer{
   align-items: center;
   justify-content: center;
 }
+
+.search-box{
+  height: 40vh;
+  width: 100vw;
+  min-height: 200px;
+  min-width: 450px;
+  overflow: scroll;
+  background-position: center;
+  background-size: cover;
+  background-image: url("./assets/campus_2.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-box-content{
+  height: 30vh;
+  width: 70vw;
+  min-width: 440px;
+  min-height: 128px;
+  background-color: rgba(255, 255, 255 ,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #4D85C1;
+}
+.search-bar input{
+  height: 30px;
+  margin: 5px;
+}
+.search-bar input:hover{
+  background-color: #85C2EA;
+}
+.search-bar button{
+  height: 40px;
+  margin: 5px;
+  background-color: #4D85C1;
+  color: white;
+  cursor: pointer;
+}
+.search-bar button:hover{
+  color: #4D85C1;
+  background: white;
+}
+
+
 .tag-section{
   height: 15vh;
   min-height: 80px;

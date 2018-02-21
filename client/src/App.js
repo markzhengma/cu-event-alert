@@ -164,7 +164,7 @@ class App extends Component {
                     handleRegisterSubmit = {this.handleRegisterSubmit} 
                     />
             <main>
-              <Route exact path = '/' render = {() => <Home />}/>
+              <Route exact path = '/' render = {() => <Home auth = {this.state.auth} user = {this.state.user}/>}/>
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
               <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
