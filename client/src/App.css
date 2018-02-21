@@ -277,11 +277,12 @@ footer{
   transition: 0.5s;
 }
 .tag-single:hover{
-  background-color: #85C2EA;
+  background-color: #C4D8E2;
   color: white;
   transition: 0.5s;
 }
 .highlight-section{
+  color: #4D85C1;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -310,17 +311,18 @@ footer{
   border-bottom: groove rgba(128, 128, 128, 0.233) 2px;
   border-top: groove rgba(128, 128, 128, 0.233) 2px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s;
 }
 .highlight-image:hover{
-  background-color: #85C2EA;
-  transition: background-color 0.3s;
+  background-color: white;
+  transition: background-color 0.5s;
 }
 .highlight-detail{
   height: 13vw;
   min-height: 88px;
   width: 43vw;
   min-width: 288px;
+  color: black;
   background-color: #C4D8E2;
   margin: 0;
   padding: 1vw;
@@ -337,22 +339,22 @@ footer{
   min-width: 67px;
   border-left: groove rgba(194, 189, 189, 0.205) 4px;
   border-right: groove rgba(194, 189, 189, 0.205) 4px;
-  transition: background-color 0.3s;
+  transition: background 0.5s;
   cursor: pointer;
 }
 .highlight-btn:hover{
-  background-color: #85C2EA;
-  transition: background-color 0.3s;
+  background-color: white;
+  background-size: 100%;
 }
 .prev-highlight{
   background-image: url("./assets/left_arrow.png");
   background-position: center;
-  background-size: contain;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
 .next-highlight{
   background-image: url("./assets/right_arrow.png");
   background-position: center;
-  background-size: contain;
+  background-size: 90%;
   background-repeat: no-repeat;
 }
