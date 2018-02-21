@@ -5,7 +5,30 @@ class EventTag extends Component {
     render() {
         return (
             <div className = "tag-section">
-                <h3>This is the event tag component!</h3>
+                <div className = "tag-single">
+                    <div className = "tag-image"/>
+                    <b>Lecture</b>
+                </div>
+                <div className = "tag-single">
+                    <div className = "tag-image"/>
+                    <b>Music</b>
+                </div>
+                <div className = "tag-single">
+                    <div className = "tag-image"/>
+                    <b>Theater</b>
+                </div>
+                <div className = "tag-single">
+                    <div className = "tag-image"/>
+                    <b>Volunteer</b>
+                </div>
+                <div className = "tag-single">
+                    <div className = "tag-image"/>
+                    <b>Workshop</b>
+                </div>
+                <div className = "tag-single">
+                    <div className = "tag-image"/>
+                    <b>More</b>
+                </div>
             </div>
         )
     }
