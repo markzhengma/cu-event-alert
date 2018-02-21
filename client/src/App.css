@@ -268,7 +268,82 @@ footer{
   transition: 0.5s;
 }
 .tag-single:hover{
-  background-color: #4D85C1;
+  background-color: #85C2EA;
   color: white;
   transition: 0.5s;
+}
+.highlight-section{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #C4D8E2;
+}
+.highlight-scroller{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55vw;
+  min-height: 390px;
+  width: 100%;
+}
+.highlight-image{
+  height: 40vw;
+  min-height: 270px;
+  width: 45vw;
+  min-width: 303px;
+  background-image: url("./assets/event_example.png");
+  background-color: #C4D8E2;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-bottom: groove rgba(128, 128, 128, 0.233) 2px;
+  border-top: groove rgba(128, 128, 128, 0.233) 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.highlight-image:hover{
+  background-color: #85C2EA;
+  transition: background-color 0.3s;
+}
+.highlight-detail{
+  height: 13vw;
+  min-height: 88px;
+  width: 43vw;
+  min-width: 288px;
+  background-color: #C4D8E2;
+  margin: 0;
+  padding: 1vw;
+  border-bottom: groove rgba(128, 128, 128, 0.233) 4px;
+  text-align: center;
+}
+.highlight-detail p{
+  margin: 3px;
+}
+.highlight-btn{
+  height: 55vw;
+  min-height: 372px;
+  width: 10vw;
+  min-width: 67px;
+  border-left: groove rgba(194, 189, 189, 0.205) 4px;
+  border-right: groove rgba(194, 189, 189, 0.205) 4px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.highlight-btn:hover{
+  background-color: #85C2EA;
+  transition: background-color 0.3s;
+}
+.prev-highlight{
+  background-image: url("./assets/left_arrow.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.next-highlight{
+  background-image: url("./assets/right_arrow.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
