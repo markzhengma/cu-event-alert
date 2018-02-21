@@ -13,7 +13,7 @@ const Home = (props) => {
             <EventTag/>
             <EventHighlight/>
             <EventRanking/>
-            {props.auth ? <EventRecommend/> : ""}
+            {props.auth ? <EventRecommend user = {props.user}/> : ""}
         </div>
     )
 }
