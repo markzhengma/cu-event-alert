@@ -5,7 +5,9 @@ class EventHighlight extends Component {
     render() {
         return (
             <div className = "highlight-section">
-                <h3>Event Highlights</h3>
+                <div className = "highlight-title">
+                    <h3>Event Highlights</h3>
+                </div>
                 <div className = "highlight-scroller">
                     <div className = "highlight-btn prev-highlight"/>
                     <div className = "highlight-single">
