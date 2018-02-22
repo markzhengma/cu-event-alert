@@ -168,9 +168,8 @@ class App extends Component {
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
               <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
-              <div className = "spacer-block"/>
+              <Footer/>
             </main>
-            <Footer/>
           </div>
         </Router>
       );
