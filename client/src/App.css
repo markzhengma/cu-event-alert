@@ -493,16 +493,19 @@ footer{
 }
 .recommend-title{
   height: 30px;
+  width: 80vw;
+  min-width: 440px;
+  padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: rgba(196, 216, 226, 0.7);
-  padding: 5px;
 }
 .recommend-list{
-  margin-top: 20px;
   padding: 10px;
   width: 80vw;
   min-width: 440px;
+  background-color: rgba(196, 216, 226, 0.7);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -513,7 +516,6 @@ footer{
   width: 9vw;
   min-width: 100px;
   color: rgba(34, 72, 129, 1);
-  background-color: rgba(196, 216, 226, 0.7);
   transition: background-color 0.5s;
   display: flex;
   flex-direction: column;
