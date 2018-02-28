@@ -6,7 +6,7 @@ class EventHighlight extends Component {
         return (
             <div className = "highlight-section">
                 <div className = "highlight-title">
-                    <h3>Event Highlights</h3>
+                    <b>Event Highlights</b>
                 </div>
                 <div className = "highlight-scroller">
                     <div className = "highlight-btn prev-highlight"/>

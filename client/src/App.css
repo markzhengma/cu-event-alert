@@ -309,9 +309,16 @@ footer{
   background-color: rgba(196, 216, 226, 0.7);
   width: 45vw;
   min-width: 303px;
+  height: 40px;
   display: flex;
   justify-content: center;
-  border-top: groove rgba(128, 128, 128, 0.233) 2px;
+  align-items: center;
+  box-sizing: border-box;
+  border-top: groove rgba(128, 128, 128, 0.233) 4px;
+  border-bottom: groove rgba(194, 189, 189, 0.205) 4px;
+}
+.highlight-title h3{
+  margin: 0;
 }
 .highlight-scroller{
   display: flex;
@@ -331,25 +338,26 @@ footer{
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  border-bottom: groove rgba(128, 128, 128, 0.233) 2px;
-  border-top: groove rgba(128, 128, 128, 0.233) 2px;
   cursor: pointer;
   transition: background-color 0.5s;
+  box-sizing: border-box;
+  border-bottom: groove rgba(194, 189, 189, 0.205) 4px;
 }
 .highlight-image:hover{
   background-color: rgba(255, 255, 255, 0.7);
   transition: background-color 0.5s;
 }
 .highlight-detail{
-  height: 13vw;
+  height: 15vw;
   min-height: 88px;
-  width: 43vw;
-  min-width: 288px;
-  background-color: rgba(196, 216, 226, 0.7);;
+  width: 45vw;
+  min-width: 303px;
+  background-color: rgba(196, 216, 226, 0.7);
   margin: 0;
-  padding: 1vw;
-  border-bottom: groove rgba(128, 128, 128, 0.233) 4px;
+  padding-top: 1vw;
   text-align: center;
+  box-sizing: border-box;
+  border-bottom: groove rgba(194, 189, 189, 0.205) 4px;
 }
 .highlight-detail p{
   margin: 3px;
@@ -359,6 +367,7 @@ footer{
   min-height: 372px;
   width: 10vw;
   min-width: 67px;
+  box-sizing: border-box;
   border-left: groove rgba(194, 189, 189, 0.205) 4px;
   border-right: groove rgba(194, 189, 189, 0.205) 4px;
   transition: background 0.5s;
@@ -472,4 +481,74 @@ footer{
 }
 .ranking-detail p{
   margin: 0;
+}
+
+.recommend-section{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  overflow: scroll;
+}
+.recommend-title{
+  height: 30px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(196, 216, 226, 0.7);
+  padding: 5px;
+}
+.recommend-list{
+  margin-top: 20px;
+  padding: 10px;
+  width: 80vw;
+  min-width: 440px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.recommend-single{
+  height: 10vw;
+  min-height: 140px;
+  width: 9vw;
+  min-width: 100px;
+  color: rgba(34, 72, 129, 1);
+  background-color: rgba(196, 216, 226, 0.7);
+  transition: background-color 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.recommend-single:hover{
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: background-color 0.5s;
+}
+.recommend-image{
+  min-width: 80px;
+  width: 8vw;
+  min-height: 80px;
+  height: 8vw;
+  background-image: url("./assets/cu_icon.jpg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s;
+}
+.recommend-image:hover{
+  background-size: 0;
+  transition: background-size 0.3s;
+}
+.recommend-detail{
+  min-width: 80px;
+  width: 8vw;
+  min-height: 80px;
+  height: 8vw;
+  color: rgba(34, 72, 129, 0);
+  transition: color 0.3s;
+}
+.recommend-detail:hover{
+  color: rgba(34, 72, 129, 1);
+  transition: color 0.3s;
 }
