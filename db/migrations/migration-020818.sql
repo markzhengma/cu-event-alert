@@ -18,6 +18,6 @@ CREATE TABLE IF NOT EXISTS users_events (
     event_time DATE,
     event_location TEXT NOT NULL,
     event_location_detail TEXT NOT NULL,
-    event_disc TEXT NOT NULL,
+    event_desc TEXT NOT NULL,
     user_id INTEGER REFERENCES users(id)
 );
