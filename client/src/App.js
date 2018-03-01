@@ -16,6 +16,7 @@ import Register from './components/Register';
 import UserPage from "./components/UserPage";
 import UserEvent from "./components/UserEvent";
 import UserSetting from "./components/UserSetting";
+import BrowseEvent from "./components/BrowseEvent";
 
 class App extends Component {
   constructor(){
@@ -168,6 +169,7 @@ class App extends Component {
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
               <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
+              <Route exact path = "/browse" render = {() => <BrowseEvent/>}/>
               <Footer/>
             </main>
           </div>

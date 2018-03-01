@@ -68,7 +68,7 @@ class Header extends Component {
                         </div>
                         <div className = "navigator">
                             <div className = "nav-link">
-                                <Link to = '/all'>Browse Event</Link>
+                                <Link to = '/browse'>Browse Event</Link>
                             </div>
                             <div className = "nav-link">
                                 <Link to = '/new'>Create Event</Link>

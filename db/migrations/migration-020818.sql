@@ -13,6 +13,11 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS users_events (
     id SERIAL PRIMARY KEY,
     event_name VARCHAR(255) NOT NULL,
-    event_time TEXT NOT NULL,
-    event_disc TEXT NOT NULL
+    event_type TEXT NOT NULL,
+    event_fee INTEGER,
+    event_time DATE,
+    event_location TEXT NOT NULL,
+    event_location_detail TEXT NOT NULL,
+    event_disc TEXT NOT NULL,
+    user_id INTEGER REFERENCES users(id)
 );

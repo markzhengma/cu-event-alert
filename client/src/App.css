@@ -53,7 +53,7 @@
 .nav-link a:hover{
   color: #4D85C1;
 }
-main{
+.home-content{
   background-image: url("./assets/bg_image.jpg");
   background-size: cover;
   background-position: center;
@@ -553,4 +553,51 @@ footer{
 .recommend-detail:hover{
   color: rgba(34, 72, 129, 1);
   transition: color 0.3s;
+}
+
+.browse-page{
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.browse-list{
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  border-top: #4D85C1 solid 2px;
+  border-left: #4D85C1 solid 2px;
+  margin-bottom: 20px;
+}
+.browse-list-head{
+  display: flex;
+  width: 80vw;
+  height: 50px;
+}
+.browse-list-head-single{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+}
+.browse-single{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 80vw;
+  border-bottom: #4D85C1 solid 2px;
+}
+.browse-single-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  border-right: #4D85C1 solid 2px;
+}
+.browse-single-detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  border-right: #4D85C1 solid 2px;
 }

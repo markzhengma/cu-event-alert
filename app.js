@@ -41,8 +41,8 @@ const authRoutes = require('./routes/auth-routes');
 app.use('/auth',authRoutes);
 const userRoutes = require('./routes/user-routes');
 app.use('/user',userRoutes);
-// const eventRoutes = require('./routes/event-routes');
-// app.use('/event', eventRoutes);
+const eventRoutes = require('./routes/event-routes');
+app.use('/event', eventRoutes);
 // const usersWordRoutes = require('./routes/usersword-routes');
 // app.use('/usersword', usersWordRoutes);
 
