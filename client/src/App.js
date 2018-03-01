@@ -31,6 +31,8 @@ class App extends Component {
       registerShow: false,
       userMenuShow: false,
       eventData: null,
+      selectedEvent: null,
+      highlightEvent: null,
     }
     this.requireLogin = this.requireLogin.bind(this);
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
@@ -39,6 +41,7 @@ class App extends Component {
     this.setContent = this.setContent.bind(this);
     this.logOrRegHandler = this.logOrRegHandler.bind(this);
     this.userMenuHandler = this.userMenuHandler.bind(this);
+    this.selectEventHandler = this.selectEventHandler.bind(this);
   }
 
 
@@ -151,6 +154,12 @@ class App extends Component {
     this.setState({
       userMenuShow: !this.state.userMenuShow,
     })
+  };
+
+  selectEventHandler = (id) => {
+    this.setState({
+      selectedEvent: this.state.eventData[id]
+    })
   }
 
   render() {
@@ -181,12 +190,17 @@ class App extends Component {
                     handleRegisterSubmit = {this.handleRegisterSubmit} 
                     />
             <main>
-              <Route exact path = '/' render = {() => <Home auth = {this.state.auth} user = {this.state.user}/>}/>
+              <Route exact path = '/' render = {() => <Home auth = {this.state.auth} 
+                                                            user = {this.state.user}
+                                                            eventData = {this.state.eventData}
+                                                            />}/>
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
               <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
-              <Route exact path = "/event/all" render = {() => <BrowseEvent eventData = {this.state.eventData}/>}/>
-              <Route exact path = "/event/single" render = {() => <SingleEvent/>}/>
+              <Route exact path = "/event/all" render = {() => <BrowseEvent eventData = {this.state.eventData}
+                                                                            selectEventHandler = {this.selectEventHandler}
+                                                                />}/>
+              <Route path = "/event/single" render = {() => <SingleEvent selectedEvent = {this.state.selectedEvent}/>}/>
               <Footer/>
             </main>
           </div>
