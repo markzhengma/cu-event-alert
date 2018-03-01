@@ -68,10 +68,10 @@ class Header extends Component {
                         </div>
                         <div className = "navigator">
                             <div className = "nav-link">
-                                <Link to = '/browse'>Browse Event</Link>
+                                <Link to = '/event/all'>Browse Event</Link>
                             </div>
                             <div className = "nav-link">
-                                <Link to = '/new'>Create Event</Link>
+                                <Link to = '/event/new'>Create Event</Link>
                             </div>
                             {this.props.auth ? 
                                 <div className = "userlink-group">
