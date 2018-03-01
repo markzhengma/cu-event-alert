@@ -1,28 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
 import axios from 'axios';
 
 class BrowseEvent extends Component {
     constructor() {
         super();
-        this.state = {
-            eventData: null,
-        }
     }
-
-    componentDidMount(){
-        axios.get("/event/all")
-        .then(res => {
-            console.log(res.data)
-            this.setState({
-                eventData: res.data,
-            })
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    };
 
     render() {
         return (
@@ -31,7 +14,7 @@ class BrowseEvent extends Component {
                     <h2>Event List</h2>
                     <h4>Amazing events are happening around you...</h4>
                 </div>
-                {this.state.eventData ? 
+                {this.props.eventData ? 
                     <div className = "browse-list-head">
                         <div className = "browse-list-head-single">Event Name</div>
                         <div className = "browse-list-head-single">Time</div>
@@ -41,10 +24,10 @@ class BrowseEvent extends Component {
                     : ""
                 }
                 <div className = "browse-list">
-                    {this.state.eventData ? 
-                        this.state.eventData.map(event => {
+                    {this.props.eventData ? 
+                        this.props.eventData.map(event => {
                             return  <div className = "browse-single" key = {event.id}>
-                                        <div className = "browse-single-name"><b>{event.event_name}</b></div>
+                                        <div className = "browse-single-name"><Link to = "/event/single">{event.event_name}</Link></div>
                                         <div className = "browse-single-detail">{event.event_time}</div>
                                         <div className = "browse-single-detail">{event.event_location}</div>
                                         <div className = "browse-single-detail">{event.event_type}</div>

@@ -17,6 +17,7 @@ import UserPage from "./components/UserPage";
 import UserEvent from "./components/UserEvent";
 import UserSetting from "./components/UserSetting";
 import BrowseEvent from "./components/BrowseEvent";
+import SingleEvent from './components/SingleEvent';
 
 class App extends Component {
   constructor(){
@@ -29,6 +30,7 @@ class App extends Component {
       loginShow: false,
       registerShow: false,
       userMenuShow: false,
+      eventData: null,
     }
     this.requireLogin = this.requireLogin.bind(this);
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
@@ -38,6 +40,20 @@ class App extends Component {
     this.logOrRegHandler = this.logOrRegHandler.bind(this);
     this.userMenuHandler = this.userMenuHandler.bind(this);
   }
+
+
+  componentDidMount(){
+    axios.get("/event/all")
+    .then(res => {
+        console.log(res.data)
+        this.setState({
+            eventData: res.data,
+        })
+    })
+    .catch(err => {
+        console.log(err);
+    });
+};
 
   requireLogin(){
     if(!this.state.auth){
@@ -169,7 +185,8 @@ class App extends Component {
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
               <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
-              <Route exact path = "/browse" render = {() => <BrowseEvent/>}/>
+              <Route exact path = "/event/all" render = {() => <BrowseEvent eventData = {this.state.eventData}/>}/>
+              <Route exact path = "/event/single" render = {() => <SingleEvent/>}/>
               <Footer/>
             </main>
           </div>
