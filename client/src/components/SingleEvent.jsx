@@ -16,6 +16,7 @@ class SingleEvent extends Component {
                 <p><b>Event Type: </b>{this.props.selectedEvent.event_type}</p>
                 <p><b>Start Time: </b>{this.props.selectedEvent.event_time}</p>
                 <p><b>Location: </b>{this.props.selectedEvent.event_location} ({this.props.selectedEvent.event_location_detail})</p>
+                <p><b>Fees: {this.props.selectedEvent.event_fee}</b></p>
                 <p><b>Description: </b>{this.props.selectedEvent.event_desc}</p>
             </div>
         )

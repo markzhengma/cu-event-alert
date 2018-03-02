@@ -557,6 +557,7 @@ footer{
 
 .browse-page{
   min-height: 75vh;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -607,5 +608,15 @@ footer{
   flex-direction: column;
   align-items: center;
   height: 75vh;
+  overflow: scroll;
   width: 100vw;
+}
+
+.create-page{
+  height: 75vh;
+  overflow: scroll;
+}
+.create-form{
+  display: flex;
+  flex-direction: column;
 }

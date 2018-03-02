@@ -18,6 +18,7 @@ import UserEvent from "./components/UserEvent";
 import UserSetting from "./components/UserSetting";
 import BrowseEvent from "./components/BrowseEvent";
 import SingleEvent from './components/SingleEvent';
+import NewEvent from "./components/NewEvent";
 
 class App extends Component {
   constructor(){
@@ -42,6 +43,8 @@ class App extends Component {
     this.logOrRegHandler = this.logOrRegHandler.bind(this);
     this.userMenuHandler = this.userMenuHandler.bind(this);
     this.selectEventHandler = this.selectEventHandler.bind(this);
+    this.handleNewEventSubmit = this.handleNewEventSubmit.bind(this);
+    this.updatedEventDataHandler = this.updatedEventDataHandler.bind(this);
   }
 
 
@@ -160,6 +163,38 @@ class App extends Component {
     this.setState({
       selectedEvent: this.state.eventData[id]
     })
+  };
+
+  handleNewEventSubmit(e, event_name, event_type, event_time, event_fee, event_location, event_location_detail, event_desc){
+    e.preventDefault();
+    axios.post("/event/new", {
+      event_name: e.target.event_name.value,
+      event_type: e.target.event_type.value,
+      event_time: e.target.event_time.value,
+      event_fee: e.target.event_fee.value,
+      event_location: e.target.event_location.value,
+      event_location_detail: e.target.event_location_detail.value,
+      event_desc: e.target.event_desc.value,
+    })
+    .then(
+      this.updatedEventDataHandler()
+    )
+    .catch(err => {
+      console.log(err);
+    })
+  };
+
+  updatedEventDataHandler = () => {
+    axios.get("/event/all")
+    .then(res => {
+        console.log(res.data)
+        this.setState({
+            eventData: res.data,
+        })
+    })
+    .catch(err => {
+        console.log(err);
+    });
   }
 
   render() {
@@ -201,6 +236,11 @@ class App extends Component {
                                                                             selectEventHandler = {this.selectEventHandler}
                                                                 />}/>
               <Route path = "/event/single" render = {() => <SingleEvent selectedEvent = {this.state.selectedEvent}/>}/>
+              <Route path = "/event/new" render = {() => <NewEvent user = {this.state.user}
+                                                                   eventData = {this.state.eventData}
+                                                                   handleNewEventSubmit = {this.handleNewEventSubmit}
+                                                                   updatedEventDataHandler = {this.updatedEventDataHandler}
+                                                                   />}/>
               <Footer/>
             </main>
           </div>

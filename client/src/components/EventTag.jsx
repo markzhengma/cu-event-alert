@@ -11,15 +11,15 @@ class EventTag extends Component {
                 </div>
                 <div className = "tag-single">
                     <div className = "tag-image"/>
-                    <b>Music</b>
+                    <b>Network</b>
                 </div>
                 <div className = "tag-single">
                     <div className = "tag-image"/>
-                    <b>Theater</b>
+                    <b>Open House</b>
                 </div>
                 <div className = "tag-single">
                     <div className = "tag-image"/>
-                    <b>Volunteer</b>
+                    <b>Job Fair</b>
                 </div>
                 <div className = "tag-single">
                     <div className = "tag-image"/>
