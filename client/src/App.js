@@ -176,12 +176,16 @@ class App extends Component {
       event_location_detail: e.target.event_location_detail.value,
       event_desc: e.target.event_desc.value,
     })
-    .then(
-      this.updatedEventDataHandler()
+    .then(res=>{
+        console.log(res.data)
+        this.setState({
+          selectedEvent: res.data,
+        })
+      }
     )
     .catch(err => {
       console.log(err);
-    })
+    });
   };
 
   updatedEventDataHandler = () => {
@@ -234,6 +238,7 @@ class App extends Component {
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
               <Route exact path = "/event/all" render = {() => <BrowseEvent eventData = {this.state.eventData}
                                                                             selectEventHandler = {this.selectEventHandler}
+                                                                            updatedEventDataHandler = {this.updatedEventDataHandler}
                                                                 />}/>
               <Route path = "/event/single" render = {() => <SingleEvent selectedEvent = {this.state.selectedEvent}/>}/>
               <Route path = "/event/new" render = {() => <NewEvent user = {this.state.user}

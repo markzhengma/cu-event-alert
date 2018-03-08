@@ -7,6 +7,10 @@ class BrowseEvent extends Component {
         super();
     }
 
+    componentDidMount(){
+        this.props.updatedEventDataHandler();
+    }
+
     render() {
         return (
             <div className = "browse-page">
