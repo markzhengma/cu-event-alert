@@ -6,7 +6,7 @@ import axios from 'axios';
 class SingleEvent extends Component {
     constructor() {
         super();
-    }
+    };
 
     render() {
         return (
@@ -18,6 +18,17 @@ class SingleEvent extends Component {
                 <p><b>Location: </b>{this.props.selectedEvent.event_location} ({this.props.selectedEvent.event_location_detail})</p>
                 <p><b>Fees: {this.props.selectedEvent.event_fee}</b></p>
                 <p><b>Description: </b>{this.props.selectedEvent.event_desc}</p>
+                {this.props.user ? 
+                    this.props.selectedEvent.user_id == this.props.user.id ?
+                        <div className="edit-btn-group">
+                            <div className="user-btn"><a>Edit Event</a></div>
+                            <div className="user-btn"><a>Remove Event</a></div>
+                        </div>
+                        :
+                        ""
+                        :
+                        ""
+                }
             </div>
         )
     }

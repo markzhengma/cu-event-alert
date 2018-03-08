@@ -32,7 +32,7 @@ class BrowseEvent extends Component {
                         this.props.eventData.map(event => {
                             return  <div className = "browse-single" key = {event.id}>
                                         <div className = "browse-single-name">
-                                            <Link to = {`/event/single/${this.props.eventData.indexOf(event)}`} 
+                                            <Link to = "/event/single"
                                                   onClick = {() => this.props.selectEventHandler(this.props.eventData.indexOf(event))}>
                                                 {event.event_name}
                                             </Link>

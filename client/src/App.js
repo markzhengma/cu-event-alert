@@ -27,7 +27,7 @@ class App extends Component {
       auth: false,
       user: null,
       currentContent: "home",
-      redirect: "/",
+      redirect: null,
       loginShow: false,
       registerShow: false,
       userMenuShow: false,
@@ -45,6 +45,7 @@ class App extends Component {
     this.selectEventHandler = this.selectEventHandler.bind(this);
     this.handleNewEventSubmit = this.handleNewEventSubmit.bind(this);
     this.updatedEventDataHandler = this.updatedEventDataHandler.bind(this);
+    this.clearRedirect = this.clearRedirect.bind(this);
   }
 
 
@@ -159,9 +160,9 @@ class App extends Component {
     })
   };
 
-  selectEventHandler = (id) => {
+  selectEventHandler = (index) => {
     this.setState({
-      selectedEvent: this.state.eventData[id]
+      selectedEvent: this.state.eventData[index]
     })
   };
 
@@ -176,13 +177,18 @@ class App extends Component {
       event_location_detail: e.target.event_location_detail.value,
       event_desc: e.target.event_desc.value,
     })
-    .then(res=>{
+    .then(res => {
         console.log(res.data)
         this.setState({
           selectedEvent: res.data,
         })
       }
     )
+    .then(res => {
+      this.setState({
+        redirect: '/event/single'
+      })
+    })
     .catch(err => {
       console.log(err);
     });
@@ -199,20 +205,23 @@ class App extends Component {
     .catch(err => {
         console.log(err);
     });
-  }
+  };
+
+  clearRedirect = () => {
+    console.log("clearing redirect url...");
+    this.setState({
+      redirect: null,
+    });
+  };
 
   render() {
-    // if(this.state.redirect !== null){
-    //   let redir = this.state.redirect;
-    //   this.setState({
-    //     redirect: null,
-    //   });
-    //   return (
-    //     <Router>
-    //       <Redirect push to = {redir} />
-    //     </Router>
-    //   )
-    // }else{
+    if(this.state.redirect){
+      return (
+        <Router>
+          <Redirect push to = {this.state.redirect} />
+        </Router>
+      )
+    }else{
       return (
         <Router>
           <div className="App">
@@ -240,9 +249,14 @@ class App extends Component {
                                                                             selectEventHandler = {this.selectEventHandler}
                                                                             updatedEventDataHandler = {this.updatedEventDataHandler}
                                                                 />}/>
-              <Route path = "/event/single" render = {() => <SingleEvent selectedEvent = {this.state.selectedEvent}/>}/>
+              <Route path = "/event/single" render = {() => <SingleEvent selectedEvent = {this.state.selectedEvent}
+                                                                         clearRedirect = {this.clearRedirect}
+                                                                         user = {this.state.user}
+                                                                />}/>
               <Route path = "/event/new" render = {() => <NewEvent user = {this.state.user}
+                                                                   auth = {this.state.auth}
                                                                    eventData = {this.state.eventData}
+                                                                   clearRedirect = {this.clearRedirect}
                                                                    handleNewEventSubmit = {this.handleNewEventSubmit}
                                                                    updatedEventDataHandler = {this.updatedEventDataHandler}
                                                                    />}/>
@@ -251,7 +265,7 @@ class App extends Component {
           </div>
         </Router>
       );
-    // }
+    }
   }
 }
 

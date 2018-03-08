@@ -17,7 +17,7 @@ class EventHighlight extends Component {
                         <div className = "highlight-scroller">
                             <div className = "highlight-btn prev-highlight"/>
                             <div className = "highlight-single">
-                                <div className = "highlight-image"/>
+                                <div className = "highlight-image"></div>
                                 <div className = "highlight-detail">
                                     <b>{this.props.eventData[0].event_name}</b>
                                     <p><b>Time: </b>{this.props.eventData[0].event_time}</p>
