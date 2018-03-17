@@ -17,7 +17,7 @@ class UserPage extends Component {
 
             this.props.user ?
 
-            this.props.selectedUser.id == this.props.user.id ?
+            this.props.selectedUser.id === this.props.user.id ?
 
             <div className = "user-page">
                 <div className = "user-title">

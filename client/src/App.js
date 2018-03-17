@@ -11,8 +11,6 @@ import {
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import Login from './components/Login';
-import Register from './components/Register';
 import UserPage from "./components/UserPage";
 import UserEvent from "./components/UserEvent";
 import UserSetting from "./components/UserSetting";

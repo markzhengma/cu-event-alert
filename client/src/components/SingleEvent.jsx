@@ -13,7 +13,7 @@ class SingleEvent extends Component {
                 <p><b>Fees: ${this.props.selectedEvent.event_fee}</b></p>
                 <p><b>Description: </b>{this.props.selectedEvent.event_desc}</p>
                 {this.props.user ? 
-                    this.props.selectedEvent.user_id == this.props.user.id ?
+                    this.props.selectedEvent.user_id === this.props.user.id ?
                         <div className="edit-btn-group">
                             <div className="user-btn"><a>Edit Event</a></div>
                             <div className="user-btn"><a>Remove Event</a></div>
