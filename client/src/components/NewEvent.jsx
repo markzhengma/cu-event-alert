@@ -36,7 +36,7 @@ class NewEvent extends Component {
                         <input className = "register-input" type = "text" name = "event_name" value = {this.state.event_name} placeholder = "Event Name" onChange = {this.handleInputChange}/>
                         <input className = "register-input" type = "text" name = "event_type" value = {this.state.event_type} placeholder = "Event Type" onChange = {this.handleInputChange}/>
                         <input className = "register-input" type = 'number' name = 'event_fee' value = {this.state.event_fee} placeholder = "Event Fee" onChange = {this.handleInputChange}/>
-                        <input className = "register-input" type = 'date' name = 'event_time' value = {this.state.event_time} placeholder = "Event Time" onChange = {this.handleInputChange}/>
+                        <input className = "register-input" type = 'datetime-local' name = 'event_time' value = {this.state.event_time} placeholder = "Event Time" onChange = {this.handleInputChange}/>
                         <input className = "register-input" type = "text" name = "event_location" value = {this.state.event_location} placeholder = "Event Location" onChange = {this.handleInputChange}/>
                         <input className = "register-input" type = "text" name = "event_location_detail" value = {this.state.event_location_detail} placeholder = "Detailed Location" onChange = {this.handleInputChange}/>
                         <input className = "register-input" type = "text" name = "event_desc" value = {this.state.event_desc} placeholder = "Description" onChange = {this.handleInputChange}/>

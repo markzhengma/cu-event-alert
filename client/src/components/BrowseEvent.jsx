@@ -37,7 +37,7 @@ class BrowseEvent extends Component {
                                                 {event.event_name}
                                             </Link>
                                         </div>
-                                        <div className = "browse-single-detail">{new Date(event.event_time).toDateString()}</div>
+                                        <div className = "browse-single-detail">{new Date(event.event_time).toLocaleString()}</div>
                                         <div className = "browse-single-detail">{event.event_location}</div>
                                         <div className = "browse-single-detail">{event.event_type}</div>
                                     </div>
