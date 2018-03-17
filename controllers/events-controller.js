@@ -4,8 +4,8 @@ const eventsController = {};
 
 eventsController.findAll = (req, res) => {
     Event.findAll()
-    .then(words => {
-        res.json(words);
+    .then(events => {
+        res.json(events);
     })
     .catch(err => {
         console.log(err);
