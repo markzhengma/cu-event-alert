@@ -26,6 +26,7 @@ class App extends Component {
     this.state = {
       auth: false,
       user: null,
+      selectedUser: null,
       currentContent: "home",
       redirect: null,
       loginShow: false,
@@ -46,6 +47,7 @@ class App extends Component {
     this.handleNewEventSubmit = this.handleNewEventSubmit.bind(this);
     this.updatedEventDataHandler = this.updatedEventDataHandler.bind(this);
     this.clearRedirect = this.clearRedirect.bind(this);
+    this.selectUserHandler = this.selectUserHandler.bind(this);
   }
 
 
@@ -133,7 +135,7 @@ class App extends Component {
         currentContent: "home",
         auth: false,
         user: null,
-        redirect: "/",
+        redirect: null,
       });
     })
     .catch(err => {
@@ -214,6 +216,21 @@ class App extends Component {
     });
   };
 
+  selectUserHandler (username){
+    console.log(username);
+    axios.get(`/user/${username}`, {
+      username: username,
+    })
+    .then(res => {
+      this.setState({
+        selectedUser: res.data,
+      })
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
   render() {
     if(this.state.redirect){
       return (
@@ -242,12 +259,16 @@ class App extends Component {
                                                             user = {this.state.user}
                                                             eventData = {this.state.eventData}
                                                             />}/>
-              <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}/>}/>
+              <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}
+                                                                    selectedUser = {this.state.selectedUser}
+                                                                    />}/>
               <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
               <Route exact path = "/event/all" render = {() => <BrowseEvent eventData = {this.state.eventData}
                                                                             selectEventHandler = {this.selectEventHandler}
                                                                             updatedEventDataHandler = {this.updatedEventDataHandler}
+                                                                            selectedUser = {this.state.selectedUser}
+                                                                            selectUserHandler = {this.selectUserHandler}
                                                                 />}/>
               <Route path = "/event/single" render = {() => <SingleEvent selectedEvent = {this.state.selectedEvent}
                                                                          clearRedirect = {this.clearRedirect}

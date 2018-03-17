@@ -4,7 +4,20 @@ const Event = {};
 
 Event.findAll = () => {
     return db.query(`
-    SELECT * FROM users_events
+    SELECT users_events.id,
+           users.username,
+           users.firstname, 
+           users.lastname, 
+           users_events.event_name, 
+           users_events.event_type, 
+           users_events.event_fee, 
+           users_events.event_time,
+           users_events.event_location, 
+           users_events.event_location_detail, 
+           users_events.event_desc 
+    FROM users_events 
+    INNER JOIN users 
+    ON users.id=users_events.user_id;
     `);
 };
 

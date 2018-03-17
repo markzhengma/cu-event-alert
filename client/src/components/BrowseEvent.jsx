@@ -24,6 +24,7 @@ class BrowseEvent extends Component {
                         <div className = "browse-list-head-single">Time</div>
                         <div className = "browse-list-head-single">Location</div>
                         <div className = "browse-list-head-single">Type</div>
+                        <div className = "browse-list-head-single">Organizer</div>
                     </div>
                     : ""
                 }
@@ -40,6 +41,7 @@ class BrowseEvent extends Component {
                                         <div className = "browse-single-detail">{new Date(event.event_time).toLocaleString()}</div>
                                         <div className = "browse-single-detail">{event.event_location}</div>
                                         <div className = "browse-single-detail">{event.event_type}</div>
+                                        <div className = "browse-single-detail"><Link to = "/user" onClick = {() => this.props.selectUserHandler(event.username)}>{event.firstname} {event.lastname}</Link></div>
                                     </div>
                         })
                         : <b>Sorry, no active events so far.</b>

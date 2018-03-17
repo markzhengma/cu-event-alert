@@ -37,6 +37,17 @@ usersController.index = (req, res) => {
     });
 };
 
+usersController.findUser = (req, res) => {
+    User.findByUsername(req.params.username)
+    .then(user => {
+        res.json(user);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+}
+
 usersController.update = (req, res) => {
     console.log(req.params);
     User.update(req.body.firstname, req.body.lastname, req.body.email, req.body.school, req.params.id)
