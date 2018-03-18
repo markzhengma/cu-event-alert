@@ -90,7 +90,7 @@ class Header extends Component {
                     {this.props.loginShow ? <Login handleLoginSubmit = {this.props.handleLoginSubmit} logOrRegHandler = {this.props.logOrRegHandler}/> : ""}
                     {this.props.registerShow ? <Register handleRegisterSubmit = {this.props.handleRegisterSubmit} logOrRegHandler = {this.props.logOrRegHandler}/> : ""}
                     <div className = "user-menu" onClick = {this.props.userMenuHandler} style = {this.props.userMenuShow ? userMenuShow : userMenuHide}>
-                        <Link to = "/user" style = {this.props.userMenuShow ? linkShow : linkHide}>Profile</Link>
+                        <Link to = "/user" style = {this.props.userMenuShow ? linkShow : linkHide} onClick = {() => this.props.selectUserHandler(this.props.user.username)}>Profile</Link>
                         <Link to = "/user/event" style = {this.props.userMenuShow ? linkShow : linkHide}>My Events</Link>
                         <Link to = "/user/setting" style = {this.props.userMenuShow ? linkShow : linkHide}>Settings</Link>
                         <Link to = "/" onClick = {this.props.logOut} style = {this.props.userMenuShow ? linkShow : linkHide}>Log out</Link>

@@ -46,6 +46,7 @@ class App extends Component {
     this.updatedEventDataHandler = this.updatedEventDataHandler.bind(this);
     this.clearRedirect = this.clearRedirect.bind(this);
     this.selectUserHandler = this.selectUserHandler.bind(this);
+    this.clearSelectedUser = this.clearSelectedUser.bind(this);
   }
 
 
@@ -229,6 +230,12 @@ class App extends Component {
     })
   }
 
+  clearSelectedUser = () => {
+    this.setState({
+      selectedUser: null,
+    })
+  }
+
   render() {
     if(this.state.redirect){
       return (
@@ -250,7 +257,9 @@ class App extends Component {
                     logOrRegHandler = {this.logOrRegHandler}
                     userMenuHandler = {this.userMenuHandler}
                     handleLoginSubmit = {this.handleLoginSubmit} 
-                    handleRegisterSubmit = {this.handleRegisterSubmit} 
+                    handleRegisterSubmit = {this.handleRegisterSubmit}
+                    selectedUser = {this.state.selectedUser}
+                    selectUserHandler = {this.selectUserHandler}
                     />
             <main>
               <Route exact path = '/' render = {() => <Home auth = {this.state.auth} 
@@ -260,6 +269,7 @@ class App extends Component {
                                                             />}/>
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}
                                                                     selectedUser = {this.state.selectedUser}
+                                                                    clearSelectedUser = {this.clearSelectedUser}
                                                                     />}/>
               <Route exact path = "/user/event" render = {() => <UserEvent user = {this.state.user}/>}/>
               <Route exact path = "/user/setting" render = {() => <UserSetting user = {this.state.user}/>}/>
