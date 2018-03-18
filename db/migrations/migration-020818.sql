@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS users_events (
     event_name VARCHAR(255) NOT NULL,
     event_type TEXT NOT NULL,
     event_fee INTEGER,
-    event_time DATE,
+    event_time TIMESTAMP,
     event_location TEXT NOT NULL,
     event_location_detail TEXT NOT NULL,
     event_desc TEXT NOT NULL,
