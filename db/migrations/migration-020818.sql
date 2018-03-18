@@ -1,4 +1,4 @@
-\c cuevent_dev
+-- \c cuevent_dev
 
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,

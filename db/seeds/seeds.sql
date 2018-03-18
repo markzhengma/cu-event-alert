@@ -1,4 +1,4 @@
-\c cuevent_dev;
+-- \c cuevent_dev;
 
 INSERT INTO users_events
     (event_name, event_type, event_fee, event_time, event_location, event_location_detail, event_desc)
