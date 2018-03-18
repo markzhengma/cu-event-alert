@@ -331,10 +331,10 @@ footer{
   min-height: 270px;
   width: 45vw;
   min-width: 303px;
-  background-image: url("./assets/event_example.png");
+  background-image: url("./assets/cu_event_logo.png");
   background-color: rgba(196, 216, 226, 0.7);
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
   transition: background-color 0.5s;
@@ -344,6 +344,10 @@ footer{
 .highlight-image:hover{
   background-color: rgba(255, 255, 255, 0.7);
   transition: background-color 0.5s;
+}
+.highlight-single-title{
+  font-size: 20px;
+  height: 40px;
 }
 .highlight-detail{
   height: 15vw;

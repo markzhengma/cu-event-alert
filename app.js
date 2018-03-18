@@ -30,7 +30,7 @@ app.use(express.static('public'));
 
 const PORT = process.env.PORT||3001;
 app.listen(PORT, () => {
-    console.log(`Connected to ${PORT}, CUEvent rules!`);
+    console.log(`Connected to ${PORT}, LET'S GO COLUMBIA!`);
 });
 
 app.get('/', (req,res) => {

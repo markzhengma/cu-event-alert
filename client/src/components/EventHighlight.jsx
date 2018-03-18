@@ -47,10 +47,14 @@ class EventHighlight extends Component {
                         <div className = "highlight-scroller">
                             <div className = "highlight-btn prev-highlight" onClick = {() => this.prevEvent()}/>
                             <div className = "highlight-single">
-                                <div className = "highlight-image"></div>
+                                <Link to = "/event/single" onClick = {() => this.props.selectEventHandler(this.state.currentIndex)}>
+                                    <div className = "highlight-image"/>
+                                </Link>
                                 <div className = "highlight-detail">
-                                    <b>{this.props.eventData[this.state.currentIndex].event_name}</b>
-                                    <p><b>Time: </b>{this.props.eventData[this.state.currentIndex].event_time}</p>
+                                    <Link to = "/event/single" onClick = {() => this.props.selectEventHandler(this.state.currentIndex)}>
+                                        <b className = "highlight-single-title">{this.props.eventData[this.state.currentIndex].event_name}</b>
+                                    </Link>
+                                    <p><b>Time: </b>{new Date(this.props.eventData[this.state.currentIndex].event_time).toLocaleString()}</p>
                                     <p><b>Location: </b><a href = {`https://www.google.com/search?q=${this.props.eventData[this.state.currentIndex].event_location} (${this.props.eventData[this.state.currentIndex].event_location_detail})`} target = "_blank">
                                         {this.props.eventData[this.state.currentIndex].event_location} ({this.props.eventData[this.state.currentIndex].event_location_detail})
                                         </a></p>

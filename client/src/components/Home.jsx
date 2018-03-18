@@ -11,7 +11,9 @@ const Home = (props) => {
          <div className = 'home-content'>
             <SearchBox/>
             <EventTag/>
-            <EventHighlight eventData = {props.eventData}/>
+            <EventHighlight eventData = {props.eventData}
+                            selectEventHandler = {props.selectEventHandler}
+                            />
             <EventRanking eventData = {props.eventData}/>
             {props.auth ? <EventRecommend user = {props.user}/> : ""}
         </div>

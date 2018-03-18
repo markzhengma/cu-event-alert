@@ -256,6 +256,7 @@ class App extends Component {
               <Route exact path = '/' render = {() => <Home auth = {this.state.auth} 
                                                             user = {this.state.user}
                                                             eventData = {this.state.eventData}
+                                                            selectEventHandler = {this.selectEventHandler}
                                                             />}/>
               <Route exact path = "/user" render = {() => <UserPage user = {this.state.user}
                                                                     selectedUser = {this.state.selectedUser}
