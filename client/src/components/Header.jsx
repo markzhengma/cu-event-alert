@@ -63,6 +63,7 @@ class Header extends Component {
                     <div className = 'app-header'>
                         <div className = "header-text">
                             <Link to = "/">
+                                <div className = "header-logo"/>
                                 <h1>CU EVENT</h1>
                             </Link>
                         </div>
@@ -75,12 +76,12 @@ class Header extends Component {
                             </div>
                             {this.props.auth ? 
                                 <div className = "userlink-group">
-                                    <div className = "nav-link">
+                                    <div className = "nav-link" style = {{borderRight: "none"}}>
                                         <a onClick = {this.props.userMenuHandler}>{this.props.user.username}<i className="fas fa-user"></i></a>
                                     </div>
                                 </div>
                             :
-                                <div className = "nav-link">
+                                <div className = "nav-link" style = {{borderRight: "none"}}>
                                     <a onClick = {() => this.props.logOrRegHandler(true, false)}>Log in</a>
                                 </div>
                             }

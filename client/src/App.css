@@ -29,6 +29,15 @@
   font-size: 3vh;
   margin-left: 10px;
   transition: color 0.5s;
+  display: flex;
+  flex-direction: row;
+}
+.header-logo{
+  height: 15vh;
+  width: 15vh;
+  background-image: url("./assets/cu_event_logo.png");
+  background-size: cover;
+  background-position: center;
 }
 .header-text a:hover{
   color: #4D85C1;
